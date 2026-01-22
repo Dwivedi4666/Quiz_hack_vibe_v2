@@ -1,61 +1,91 @@
 [
   {
-    "questionId": "6968e131bf2860d6e390556b",
-    "question": "What is the return type of the getLetterGrade function?",
+    "questionId": "6968e132bf2860d6e39056f0",
+    "question": "Consider the code:\n\nconst user: UserProfile = {\n    name: \"John Doe\",\n    role: \"frontend developer\"\n};\n\nThe role assigned to the user in the example is what?",
     "options": [
       {
-        "id": "693cf7cee827c654414ad023",
-        "text": "LetterGrade or null or 'invalid'",
+        "id": "693653afbc017a60563ec03b",
+        "text": "Frontend developer",
         "explaination": "No explanation provided",
         "answer": "CORRECT"
       },
       {
-        "id": "693cf7cee827c654414ad020",
-        "text": "string",
+        "id": "693653afbc017a60563ec038",
+        "text": "Backend engineer",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       },
       {
-        "id": "693cf7cee827c654414ad022",
-        "text": "number or string",
+        "id": "693653afbc017a60563ec039",
+        "text": "UI designer",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       },
       {
-        "id": "693cf7cee827c654414ad021",
-        "text": "LetterGrade only",
+        "id": "693653afbc017a60563ec03a",
+        "text": "TypeScript expert",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       }
     ]
   },
   {
-    "questionId": "6968e131bf2860d6e3905569",
-    "question": "According to the code, what letter grade is assigned for a score above 90?",
+    "questionId": "6968e132bf2860d6e39056ef",
+    "question": "TypeScript prevents mistakes by checking what?",
     "options": [
       {
-        "id": "693cf7cfe827c654414ad027",
-        "text": "S",
+        "id": "693653aebc017a60563ec030",
+        "text": "Folder names",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       },
       {
-        "id": "693cf7cfe827c654414ad025",
-        "text": "A+",
+        "id": "693653aebc017a60563ec02f",
+        "text": "HTML layout",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       },
       {
-        "id": "693cf7cfe827c654414ad026",
-        "text": "B+",
+        "id": "693653aebc017a60563ec02e",
+        "text": "Color choices",
         "explaination": "No explanation provided",
         "answer": "INCORRECT"
       },
       {
-        "id": "693cf7cfe827c654414ad028",
-        "text": "A",
+        "id": "693653aebc017a60563ec031",
+        "text": "Data types",
         "explaination": "No explanation provided",
         "answer": "CORRECT"
+      }
+    ]
+  },
+  {
+    "questionId": "6968e132bf2860d6e39056ed",
+    "question": "Consider the code:\n\ninterface UserProfile {\n    name: string;\n    role: string;\n    age?: number;\n}\n\nWhich property in the interface is marked as optional?",
+    "options": [
+      {
+        "id": "693d33d3d1ce1661284049cb",
+        "text": "username",
+        "explaination": "No explanation provided",
+        "answer": "INCORRECT"
+      },
+      {
+        "id": "693d33d3d1ce1661284049ca",
+        "text": "role",
+        "explaination": "No explanation provided",
+        "answer": "INCORRECT"
+      },
+      {
+        "id": "693d33d3d1ce1661284049cc",
+        "text": "age",
+        "explaination": "No explanation provided",
+        "answer": "CORRECT"
+      },
+      {
+        "id": "693d33d3d1ce1661284049c9",
+        "text": "name",
+        "explaination": "No explanation provided",
+        "answer": "INCORRECT"
       }
     ]
   }

@@ -2,10 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const fs = require("fs");
-const analyzeLecture = require("./Ai.js");
+
 const getAnswer = require("./answer.js");
-// import { analyzeLecture } from "./Ai.js";
-///////////////////////////////////
 
 const idConvert = (el) => {
   bufferData = el._id.buffer.data;
@@ -63,31 +61,18 @@ app.post("/capture", (req, res) => {
   let ques = quesConvert(questions);
   ////////////////////////////
   async function fetchAllAnswers(ques, token) {
-    // const finalResults = [];
-    // for (const q of ques) {
-    //   const result = [];
-    //   const { questionId, options } = q;
-    //   for (const op of options) {
-    //     const d = await getAnswer(questionId, op.id, token);
-    //     result.push(d);
-    //   }
-    //   finalResults.push(result);
-    //   console.log(finalResults);
-    // }
     const finalResults = await Promise.all(
       ques.map(async (q) => {
         const { questionId, options } = q;
 
-        // Parallelize all option requests for this specific question
         const results = await Promise.all(
           options.map((op) => getAnswer(questionId, op.id, token)),
         );
-        return results; // Becomes the result for this question
+        return results;
       }),
     );
     console.log(finalResults);
-    // console.log(ques.length);
-    // console.log(ques[0]);
+
     for (let i = 0; i < ques.length; i++) {
       const { options } = ques[i];
       console.log(options);
@@ -116,5 +101,5 @@ app.get("/", (req, res) => {
 
   res.status(200).json(dataObj);
 });
-
-app.listen(3000, () => console.log("Listening on Port:3000"));
+const PORT = 3000;
+app.listen(PORT, () => console.log("Listening on Port:3000"));
