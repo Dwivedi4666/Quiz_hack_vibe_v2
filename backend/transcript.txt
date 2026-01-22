@@ -1,0 +1,668 @@
+Welcome back to our journey with
+0:03
+Typescript. Throughout this series, we
+0:06
+have learned many powerful TypeScript
+0:08
+concepts. Variables and type
+0:10
+definitions. How TypeScript ensures type
+0:13
+safety. Type interfaces and annotations.
+0:17
+When to let Typescript guess when to be
+0:19
+explicit.
+0:21
+Interfaces versus type aliases. Defining
+0:24
+object shapes and relationships.
+0:26
+Function signatures. Typing inputs and
+0:29
+outputs. Generics. Creating reusable
+0:32
+type- safe components.
+0:35
+Advanced types that are unions,
+0:37
+intersections, map types, and
+0:39
+conditionals. Decorators attaching
+0:42
+behaviors to classes, methods, and
+0:45
+properties. Null safety handling null
+0:48
+and undefined gracefully. Let's see how
+0:51
+real world projects bring all these
+0:53
+concepts together. Imagine you are a
+0:55
+software engineer tasked with building a
+0:58
+simple blog management system and we
+1:00
+have been specified with these
+1:02
+requirements.
+1:03
+Create, read, update and delete blog
+1:06
+post. User management with different
+1:09
+roles. Admin, editor, viewer. Tags and
+1:13
+categories for organizing posts.
+1:16
+Comments on posts with moderation.
+1:19
+Access control. Not everyone can edit
+1:22
+every post. So let's begin. Yeah. So let
+1:26
+us just create a file. Uh let's name
+1:29
+this as blog.ts.
+1:34
+Yeah.
+1:35
+Let's start with the first one that is
+1:38
+uh we have type definitions
+1:42
+and interfaces.
+1:44
+Let's define the interface for student.
+1:48
+A student will have ID which is of type
+1:51
+number. Then name, age is uh let's not
+1:55
+put optional over here.
+1:59
+They will have an email which is of
+2:01
+string.
+2:07
+They will have a role number
+2:09
+which is a mandatory field and they will
+2:13
+have grades which is also a number. It's
+2:16
+an array. Let's check the next one which
+2:19
+is type aliases.
+2:23
+Here let's define a student input type
+2:31
+which will be
+2:33
+omit
+2:38
+student
+2:46
+or the grids.
+2:50
+Yeah.
+2:53
+Let's define another one which is our
+2:57
+grade response
+2:59
+which will be uh having a success which
+3:03
+is of type boolean
+3:06
+and it will have the data which can be
+3:09
+optional of type number. It will have an
+3:13
+error optional which is of type string.
+3:18
+Okay, let's see enums now. So, enums
+3:23
+will have a enum for the letter grade
+3:31
+A B. Yeah. Okay.
+3:34
+Uh
+3:36
+we'll have enum for student status.
+3:43
+Student status
+3:48
+active inactive. Yeah.
+3:55
+Okay.
+3:58
+We'll uh also define the union time st.
+4:04
+So this is of type
+4:08
+course result which is of type either
+4:11
+student or it is null
+4:16
+type uh let's add for validation of
+4:19
+result validation of result. So this is
+4:22
+either true or it's a string.
+4:27
+Okay,
+4:32
+let's add decorators. Now,
+4:39
+let's add this function log method which
+4:42
+will have a target method name. Uh
+4:45
+instead of method name, let's put it as
+4:48
+property key.
+4:50
+property key and descriptor, which is
+4:53
+property descriptor.
+4:55
+Yeah, you this
+4:58
+original method is the descriptor value.
+5:06
+We will have this dot
+5:10
+value which is a function
+5:17
+ask
+5:18
+any an array.
+5:23
+I missed one.
+5:28
+Okay,
+5:30
+we'll do a console.log over here.
+5:34
+Same method list. Yeah,
+5:38
+third property key with arguments. We
+5:42
+want JSON signify
+5:44
+with R. Okay.
+5:55
+original this. Yeah,
+6:02
+add a similar one. Let me just copy this
+6:08
+to validate the input.
+6:12
+Validate
+6:13
+input. This will have target property
+6:16
+key and property description. original
+6:18
+will be descriptor value. Uh here also
+6:21
+it's the same. Yeah, here we check if
+6:27
+my arguments zero
+6:32
+is not there
+6:34
+then I need to throw a new error.
+6:38
+Throw new error invalid input.
+6:45
+Yeah. And I'll return this original
+6:47
+value. Yeah, let's define the abstract
+6:50
+classes now.
+6:54
+Abstract class.
+6:58
+So abract
+7:02
+person it will have
+7:09
+abstract
+7:11
+details
+7:13
+which is of type string.
+7:17
+We will have protected
+7:20
+format name
+7:25
+of string.
+7:28
+It will return string over here.
+7:36
+add name dot character at the first
+7:40
+position dot to upper case
+7:44
+dot slice dot to lower case. Yeah, we'll
+7:48
+do this. Okay,
+7:51
+now we'll see classes with excess
+7:53
+modifiers.
+7:55
+So we'll see classes with
+7:59
+excess modifiers.
+8:02
+So that is uh we see class student grade
+8:11
+student
+8:13
+grade manager.
+8:16
+It will extend
+8:18
+person.
+8:22
+It will say private students.
+8:30
+It will map
+8:34
+number
+8:35
+against the student.
+8:38
+Uh let's define as new map.
+8:46
+I define a protected department over
+8:48
+here.
+9:07
+I will have a school name.
+9:17
+Let's add a generate method now.
+9:24
+This should be public
+9:35
+t will be an array and it will return
+9:45
+correction and item. Yes.
+9:48
+Let's add
+9:51
+conditional
+9:53
+app button.
+10:04
+We'll use this.
+10:07
+This will have object
+10:12
+type and key is
+10:17
+T of T
+10:20
+extend
+10:29
+key of Hey,
+11:18
+Okay. Now let's add validate input
+11:23
+also log method.
+11:28
+Let's add a student over here.
+11:31
+Add student
+11:33
+input will be the student uh data which
+11:36
+is student input.
+11:39
+Let's close this method.
+11:44
+Let's say constant student
+11:53
+ID is
+11:55
+start
+11:57
+next ID
+11:59
+++
+12:04
+is input
+12:06
+grade is this
+12:09
+get student ID and it will return the
+12:11
+student. Yeah, I'll close this. Yes,
+12:22
+let's add another method. So, this will
+12:24
+have my log method.
+12:29
+This will be add grade.
+12:35
+Uh, this will have the student ID and a
+12:38
+grade which will be a grade response.
+12:42
+If my
+12:44
+grade is below zero
+12:48
+or
+12:49
+grade is greater than 100,
+12:53
+I will
+12:55
+return
+12:58
+success is false and grade must be
+13:00
+between this.
+13:02
+Let me yeah
+13:05
+constant student.
+13:08
+Let me get the student.
+13:11
+Uh we'll put the check over here.
+13:15
+We'll do student grade push and return
+13:17
+successful data whatever is the grade.
+13:20
+Yeah. Let's add another method with the
+13:24
+log method.
+13:28
+We'll do get student
+13:32
+fetch the GP.
+13:38
+So that is the student ID the grade
+13:41
+response over here.
+13:54
+It will fetch the student.
+14:00
+If not student then return the error
+14:04
+that student is not found.
+14:09
+If yeah then return it no grades
+14:12
+available.
+14:14
+Let's calculate the GPA that is
+14:20
+GPA =
+14:22
+student
+14:27
+reduce.
+14:43
+Yeah. And we'll return this.
+14:48
+We'll do data. We'll do
+15:02
+100ide by 100.
+15:08
+Yeah,
+15:11
+this is for getting the GPA. Now
+15:14
+let's write for the letter grade.
+15:18
+This will be a function with union
+15:21
+written type
+15:24
+return.
+15:37
+which is number
+15:42
+it will be letter grade or null
+15:45
+or uh we can say invalid also
+15:56
+we'll say if it is this if it is above
+16:00
+90 then it's a yeah else it is invalid
+16:05
+Let's get the student email now.
+16:22
+Here we will use
+16:26
+student uh mail
+16:32
+or it is
+16:36
+Yeah, we'll do this constant student is
+16:38
+yeah okay not student it will return
+16:40
+null else it will return student do
+16:43
+email al so let's write a function to
+16:46
+get all the students
+16:54
+which is read only
+16:57
+student array
+17:04
+It will return
+17:08
+object
+17:12
+screens array.
+17:31
+We'll write a function to calculate the
+17:33
+average CGPA
+17:36
+which will be private function.
+18:13
+I will traverse through the students
+18:15
+arena.
+18:22
+student do grades dot length is greater
+18:27
+than zero
+18:33
+then constant GPA is this
+18:36
+and GPS dot push is this
+18:40
+we'll also do this yeah return map draw
+18:44
+this
+18:48
+Okay.
+18:51
+Uh we'll also add a override to get the
+18:54
+details.
+19:06
+Okay.
+19:08
+I'll display the students now.
+19:20
+say console.log vlog
+19:25
+student list.
+19:28
+Uh this dot students
+19:34
+students do for each student will
+19:37
+display this
+19:43
+and grades. Yeah. Uh we'll just show ID,
+19:46
+name, and we won't show email. Show role
+19:50
+number.
+19:52
+Yeah, ID, name, and grid. Okay, we'll
+19:55
+close this over here.
+20:00
+We'll display the statistics.
+20:12
+That's display the statistics. So
+20:17
+we'll have this statistics dot this dot
+20:20
+get statistics.
+20:25
+Okay. Yeah. We'll also add the get
+20:28
+statistics method. We'll add it over
+20:31
+here.
+20:34
+Type record. Yeah. Okay. Now let me have
+20:37
+my main function
+20:40
+which will have all my student data
+20:42
+basically.
+20:43
+So yeah I have some data over here of
+20:47
+students. So I'm calling my student
+20:50
+grade manager over here. I'm adding a
+20:53
+student to this
+20:56
+and I'm doing the console log over here.
+20:59
+And let me also call my main function
+21:01
+now.
+21:06
+Let me do
+21:08
+Yes.
+21:11
+Yes.
+21:14
+I have to also
+21:17
+do one more change in DS config.
+21:20
+Uh I have to put that experimental
+21:22
+decorator as true.
+21:28
+In my ts config I had to set uh this
+21:31
+thing the target as uh es16 over here.
+21:35
+Then this force consistent casing in
+21:38
+file name I have to set it as true. Uh
+21:41
+and for that for using decorators I have
+21:43
+to set this experimental decorators as
+21:46
+true over here. Yeah. And uh this is the
+21:49
+file that we have created. Let me just
+21:52
+run this now.
+21:54
+Yeah. As you can see um the output. So
+21:59
+it shows us all the students.
+22:03
+Um yeah it shows us the student grade
+22:06
+management. This console it says adding
+22:09
+these students over here.
+22:12
+So these students are added. Then it
+22:14
+shows us adding grades. So these grades
+22:16
+are added for the students. Then it
+22:19
+shows us the students. So with the ID,
+22:22
+the name and the grades.
+22:25
+Then we called a GPA function and it
+22:29
+shows us the GPA with arguments this.
+22:31
+And it shows us that student one has
+22:33
+scored 91, student two has scored 80.
+22:37
+Then it shows us the letter grades also
+22:39
+that it is 95%. So A, then 78 is C and
+22:43
+65 is D. Then it shows us student one
+22:46
+email is this. testing null safety is
+22:50
+student not found. So there is a student
+22:52
+who is not found over here. Then we have
+22:54
+the statistics. So there are total three
+22:56
+students. Uh the grades total are six
+22:59
+since each student has two grades and
+23:02
+the average GPA was this 79.83
+23:05
+and system info is uh the department
+23:08
+which is engineering and uh school name
+23:11
+that is tech academy. And yeah this is
+23:13
+the end. That's it. You have now seen
+23:15
+how every TypeScript concept works
+23:18
+together in a real world application.
+23:20
+You can see a snapshot on the screen
+23:22
+that shows how we used all Typescript
+23:25
+concepts in building the blog system.
+23:27
+Same principles scale to million line
+23:29
+code bases. You now understand
+23:32
+TypeScript deeply. We will learn more
+23:34
+about MS stack in the upcoming classes.
+23:36
+Until then, keep coding, keep exploring.
+23:39
+Thank you.
+

@@ -1,6 +1,8 @@
 import Option from "./Option";
 
 function Card({ question }) {
+  console.log(question);
+  if (!question) return null;
   return (
     <div className="quiz-card">
       <span className="question-tag">Question </span>

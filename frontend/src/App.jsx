@@ -3,15 +3,24 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
 import Header from "./Header";
+import Loader from "./Loader";
 
 function App() {
   const [dataObj, setDataObj] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    setIsLoading(true);
     fetch("http://localhost:3000/")
       .then((res) => res.json())
       .then((data) => {
         setDataObj(data);
         console.log(data);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
@@ -19,8 +28,8 @@ function App() {
     <div className="main">
       <Header />
       <div className="container">
-        {dataObj && <Card question={dataObj[0]} />}
-        {dataObj && <Card question={dataObj[1]} />}
+        {isLoading && <Loader />}
+        {dataObj && dataObj.map((data) => <Card question={data} />)}
       </div>
       <Button />
     </div>
